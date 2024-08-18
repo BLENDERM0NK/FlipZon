@@ -1,0 +1,18 @@
+.purchase-confirmation-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .back-to-products-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .back-to-products-btn:hover {
+    background-color: #0056b3;
+  }
+  

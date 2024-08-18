@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shopping-cart{
+  justify-content: space-between;
+  background-color: teal;
+  padding: 20px 20px;
+}
+
+.product-card{
+  padding: 20px;
+}
