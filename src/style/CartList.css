@@ -6,6 +6,8 @@
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure it takes full width on smaller screens */
+  box-sizing: border-box; /* Include padding and border in the width */
 }
 
 /* Individual cart item styling */
@@ -15,12 +17,15 @@
   justify-content: space-between;
   padding: 15px 0;
   border-bottom: 1px solid #ddd;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 /* Image styling */
 .cart-item img {
   border-radius: 5px;
   margin-right: 15px;
+  max-width: 100px; /* Limit the size of the image */
+  height: auto; /* Maintain aspect ratio */
 }
 
 /* Item details */
@@ -64,6 +69,7 @@
   color: #333;
 }
 
+/* Summary section styling */
 .cart-summary {
   margin-top: 30px;
   padding: 20px;
@@ -72,6 +78,7 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Summary headings and paragraphs */
 .cart-summary h3 {
   margin-bottom: 20px;
 }
@@ -81,6 +88,7 @@
   margin-bottom: 15px;
 }
 
+/* Discount section styling */
 .discount-section {
   margin-bottom: 20px;
 }
@@ -96,14 +104,7 @@
   border: 1px solid #ccc;
 }
 
-.cart-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
-}
-
+/* Remove button styling */
 .remove-btn {
   background-color: black;
   color: white;
@@ -118,32 +119,35 @@
   justify-content: center;
 }
 
+/* Hover effect for remove button */
 .remove-btn:hover {
   background-color: #ff4c4c;
 }
 
+/* Empty cart styling */
 .empty-cart {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Adjust the height to match your layout */
+  height: 100vh;
   text-align: center;
-  color: #555; /* Change this color to match your theme */
+  color: #555;
 }
 
 .empty-cart img {
-  max-width: 200px; /* Adjust the size as needed */
+  max-width: 200px;
   height: auto;
   margin-bottom: 20px;
 }
 
 .empty-cart p {
-  font-size: 1.5rem; /* Adjust the font size for the message */
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #333; /* Change this color to match your theme */
+  color: #333;
 }
 
+/* Checkout button styling */
 .checkout-btn {
   background-color: #28a745;
   color: white;
@@ -153,16 +157,19 @@
   margin-top: 20px;
 }
 
+/* Hover effect for checkout button */
 .checkout-btn:hover {
   background-color: #218838;
 }
 
+/* Checkout message styling */
 .checkout-message {
   margin-top: 10px;
   font-size: 18px;
   color: #28a745;
 }
 
+/* Back to products button styling */
 .back-to-products-btn {
   background-color: #007bff;
   color: white;
@@ -173,13 +180,13 @@
   border-radius: 10px;
 }
 
+/* Hover effect for back to products button */
 .back-to-products-btn:hover {
   background-color: #0056b3;
 }
 
-
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .cart-container {
     padding: 10px;
   }
@@ -189,11 +196,37 @@
     align-items: flex-start;
   }
 
+  .cart-item img {
+    margin-bottom: 10px;
+    max-width: 100%; /* Allow image to scale */
+  }
+
   .cart-item span {
     margin-top: 10px;
   }
 
   .cart-item button {
     margin: 10px 0;
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .cart-total {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    text-align: left; /* Align total price to the left on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-item span {
+    font-size: 14px; /* Further adjust font size for very small screens */
+  }
+
+  .cart-summary p {
+    font-size: 14px; /* Adjust font size in summary for smaller screens */
+  }
+
+  .checkout-btn, .back-to-products-btn {
+    padding: 8px 16px; /* Adjust padding for smaller buttons */
+    font-size: 14px; /* Adjust font size for smaller screens */
   }
 }
