@@ -2,11 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for programmatic navigation
 import '../style/PurchaseConfirmation.css'; // Import CSS styles for the PurchaseConfirmation component
 
-function PurchaseConfirmation() {
+function PurchaseConfirmation({clearCart}) {
   const navigate = useNavigate(); // Initialize navigate function from react-router-dom
 
   // Function to navigate back to the products page
   const handleBackToProducts = () => {
+    clearCart(); // Clear the cart
     navigate('/'); // Navigate to the home page
   };
 

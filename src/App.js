@@ -103,6 +103,11 @@ function App() {
     setCart(updatedCart);
   };
 
+  // Function to clear the cart
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <Router>
       <Header count={cart.length} /> {/* Render the Header component with cart item count */}
@@ -112,7 +117,7 @@ function App() {
         {/* Route for the cart page */}
         <Route path="/cart" element={<CartList cart={cart} removeFromCart={removeFromCart} />} />
         {/* Route for the purchase confirmation page */}
-        <Route path="/purchase-confirmation" element={<PurchaseConfirmation />} />
+        <Route path="/purchase-confirmation" element={<PurchaseConfirmation clearCart={clearCart}/>} />
       </Routes>
       <ToastContainer />  {/* Add this to enable toasts globally */}
     </Router>
