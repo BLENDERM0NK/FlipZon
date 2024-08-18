@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/CartList.css';
 
-function CartList({ cart, removeFromCart }) {
+function CartList({ cart, removeFromCart, clearCart }) {
   const [CART, setCART] = useState([]); // State to hold filtered cart items
   const [discount, setDiscount] = useState(0); // State to hold the current discount value
   const navigate = useNavigate(); // Hook for navigation
@@ -43,6 +43,7 @@ function CartList({ cart, removeFromCart }) {
   // Function to handle checkout and navigate to the purchase confirmation page
   const handleCheckout = () => {
     navigate('/purchase-confirmation');
+    clearCart();
   };
 
   // Function to navigate back to the products page

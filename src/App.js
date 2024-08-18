@@ -115,9 +115,9 @@ function App() {
         {/* Route for the product list page */}
         <Route path="/" element={<ProductList product={product} addToCart={addToCart} />} />
         {/* Route for the cart page */}
-        <Route path="/cart" element={<CartList cart={cart} removeFromCart={removeFromCart} />} />
+        <Route path="/cart" element={<CartList cart={cart} removeFromCart={removeFromCart} clearCart={clearCart}/>} />
         {/* Route for the purchase confirmation page */}
-        <Route path="/purchase-confirmation" element={<PurchaseConfirmation clearCart={clearCart}/>} />
+        <Route path="/purchase-confirmation" element={<PurchaseConfirmation/>} />
       </Routes>
       <ToastContainer />  {/* Add this to enable toasts globally */}
     </Router>
